@@ -15,6 +15,4 @@ function CardComponent({ post }) {
     )
 }
 
-
-
 export default CardComponent;
