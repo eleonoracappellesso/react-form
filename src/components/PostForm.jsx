@@ -17,7 +17,7 @@ function PostForm({ addPost }) {
         // controllo se il campo è vuoto
         if (post.title.trim() === "") return;
         // creo il nuovo post
-        const newPost = { ...post, id: null };
+        const newPost = { ...post, id: Date.now() };
         // richiamo la funzione del contenitore padre e reimposto il form al valore iniziale
         addPost(newPost);
         setPost(initialPost);
