@@ -51,6 +51,7 @@ function PostForm({ addPost }) {
                         type="checkbox"
                         className="form-check-input"
                         name="published"
+                        checked={post.published}
                         onChange={handleInput}
                     />
                     <label className="form-check-label" htmlFor="publishedPost">
