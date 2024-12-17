@@ -9,7 +9,7 @@ main {
 .read-btn {
   background-color: #DAA521;
   color: white;
-  --bs-btn-padding-x: 0.75rem;
+  /* --bs-btn-padding-x: 0.75rem;
   --bs-btn-padding-y: 0.375rem;
   --bs-btn-font-family: ;
   --bs-btn-font-size: 1rem;
@@ -37,12 +37,16 @@ main {
   user-select: none;
   border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
   border-radius: var(--bs-btn-border-radius);
-  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out; */
 }
 
 .read-btn:hover {
-  box-shadow: 0px 3px 5px grey;
   background-color: #f0c65d;
+}
+
+.btn:hover {
+  box-shadow: 0px 3px 5px grey;
+  color: black;
 }
 
 footer {
