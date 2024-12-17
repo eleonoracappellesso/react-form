@@ -1,24 +1,33 @@
 import { useState } from "react";
-const newPost = {
+// stato iniziale del post
+const initialPost = {
     title: "",
     published: false,
+    id: null,
+    image: "https://via.placeholder.com/150"
 };
 
-function PostForm() {
-    const [post, setPost] = useState(newPost);
-    const [postList, setPostList] = useState([]);
+function PostForm({ handleNewPost }) {
+    const [post, setPost] = useState(initialPost);
+    // const [postList, setPostList] = useState([]);
 
-    function handleSubmit(element) {
-        element.preventDefault();
-        setPostList([...postList, post]);
-        setPost(newPost);
+    //
+    function handleSubmit(event) {
+        event.preventDefault();
+        // controllo se il campo è vuoto
+        if (post.title.trim() === "") return;
+        // creo il nuovo post
+        const newPost = { ...post, id: null };
+        // richiamo la funzione del contenitore padre e reimposto il form al valore iniziale
+        handleNewPost(newPost);
+        setPost(initialPost);
     }
 
-    function handleInput(element) {
+    function handleInput(event) {
         const value =
-            element.target.type === "checkbox" ? element.target.checked : element.target.value;
+            event.target.type === "checkbox" ? event.target.checked : event.target.value;
 
-        setPost({ ...post, [element.target.name]: value });
+        setPost({ ...post, [event.target.name]: value });
     }
 
     return (
