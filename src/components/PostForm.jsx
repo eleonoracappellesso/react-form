@@ -7,7 +7,7 @@ const initialPost = {
     image: "https://via.placeholder.com/150"
 };
 
-function PostForm({ handleNewPost }) {
+function PostForm({ addPost }) {
     const [post, setPost] = useState(initialPost);
     // const [postList, setPostList] = useState([]);
 
@@ -19,7 +19,7 @@ function PostForm({ handleNewPost }) {
         // creo il nuovo post
         const newPost = { ...post, id: null };
         // richiamo la funzione del contenitore padre e reimposto il form al valore iniziale
-        handleNewPost(newPost);
+        addPost(newPost);
         setPost(initialPost);
     }
 
